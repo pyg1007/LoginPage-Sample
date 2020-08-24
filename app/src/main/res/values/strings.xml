@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Sample-Login</string>
+
+    <string name="id_hint">Write ID</string>
+    <string name="password_hint">Write Password</string>
+    <string name="auto_login">Auto Login</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="login">Login</string>
+    <string name="forget">If forget id/password Click here.</string>
+</resources>
