@@ -2,12 +2,14 @@
 <layout xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <variable
             name="termsofuse"
             type="com.loginsample.myapplication.signup.TermsOfUse" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/FragmentLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -16,34 +18,208 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             app:layout_constraintTop_toTopOf="parent">
+
             <View
                 android:id="@+id/firstStep"
                 android:layout_width="0dp"
                 android:layout_height="4dp"
-                app:layout_constraintWidth_percent="0.2"
-                app:layout_constraintTop_toTopOf="@id/StepLayout"
+                app:layout_constraintLeft_toLeftOf="@id/StepLayout"
                 app:layout_constraintTop_toBottomOf="@id/StepLayout"
-                app:layout_constraintLeft_toLeftOf="@id/StepLayout"/>
+                app:layout_constraintTop_toTopOf="@id/StepLayout"
+                app:layout_constraintWidth_percent="0.2" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/app_name"
-            android:gravity="center_vertical|center_horizontal"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintTop_toBottomOf="parent"/>
+            android:id="@+id/TermsOfUse"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="25dp"
+            android:gravity="center_vertical"
+            android:text="@string/TermsOfUse"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintHeight_percent="0.05"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/StepLayout"
+            app:layout_constraintWidth_percent="0.7" />
+
+        <ScrollView
+            android:id="@+id/TermsOfUseContent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintHeight_percent="0.12"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/TermsOfUse"
+            app:layout_constraintWidth_percent="0.7">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_round" />
+
+        </ScrollView>
+
+        <RadioGroup
+            android:id="@+id/TermsOfUseRadioButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            app:layout_constraintHeight_percent="0.03"
+            app:layout_constraintRight_toRightOf="@id/TermsOfUseContent"
+            app:layout_constraintTop_toBottomOf="@id/TermsOfUseContent">
+
+            <RadioButton
+                android:id="@+id/TermsOfUseAgree"
+                android:text="@string/Agree"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/TermsOfUseDisagreement"
+                android:text="@string/Disagreement"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/PersonalInformation"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:text="@string/TermsOfUse"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintHeight_percent="0.05"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/TermsOfUseRadioButton"
+            app:layout_constraintWidth_percent="0.7" />
+
+        <ScrollView
+            android:id="@+id/PersonalInformationContent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintHeight_percent="0.12"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/PersonalInformation"
+            app:layout_constraintWidth_percent="0.7">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_round" />
+
+        </ScrollView>
+
+        <RadioGroup
+            android:id="@+id/PersonalInformationRadioButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            app:layout_constraintHeight_percent="0.03"
+            app:layout_constraintRight_toRightOf="@id/PersonalInformationContent"
+            app:layout_constraintTop_toBottomOf="@id/PersonalInformationContent">
+
+            <RadioButton
+                android:id="@+id/PersonalInformationAgree"
+                android:text="@string/Agree"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/PersonalInformationDisagreement"
+                android:text="@string/Disagreement"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/LocationInformation"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="25dp"
+            android:gravity="center_vertical"
+            android:text="@string/TermsOfUse"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintHeight_percent="0.05"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/PersonalInformationRadioButton"
+            app:layout_constraintWidth_percent="0.7" />
+
+        <ScrollView
+            android:id="@+id/LocationInformationContent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintHeight_percent="0.12"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/LocationInformation"
+            app:layout_constraintWidth_percent="0.7">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_round" />
+
+        </ScrollView>
+
+        <RadioGroup
+            android:id="@+id/LocationInformationRadioButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            app:layout_constraintHeight_percent="0.03"
+            app:layout_constraintRight_toRightOf="@id/LocationInformationContent"
+            app:layout_constraintTop_toBottomOf="@id/LocationInformationContent">
+
+            <RadioButton
+                android:id="@+id/LocationInformationAgree"
+                android:text="@string/Agree"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/LocationInformationDisagreement"
+                android:text="@string/Disagreement"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RadioGroup>
+
 
         <Button
             android:id="@+id/Next"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintWidth_percent="0.2"
-            android:onClick="@{termsofuse::moveNext}"/>
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:onClick="@{termsofuse::nextPage}"
+            android:text="@string/next"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintWidth_percent="0.2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

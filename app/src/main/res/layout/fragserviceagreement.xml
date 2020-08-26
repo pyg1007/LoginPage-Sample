@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="serviceAgreement"
+            type="com.loginsample.myapplication.signup.ServiceAgreement" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/FragmentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="@string/app_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <Button
+            android:id="@+id/Next"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="@string/next"
+            android:background="@drawable/button_round"
+            android:layout_marginBottom="25dp"
+            android:layout_marginEnd="25dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintWidth_percent="0.2"
+            android:onClick="@{serviceAgreement::nextPage}"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

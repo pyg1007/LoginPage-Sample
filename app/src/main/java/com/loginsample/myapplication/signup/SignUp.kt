@@ -8,6 +8,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 
 class SignUp: Fragment() {
+
+
+    companion object{
+        fun newInstance(): SignUp{
+            return SignUp()
+        }
+    }
+
     override fun onAttach(context: Context) {
         super.onAttach(context)
     }

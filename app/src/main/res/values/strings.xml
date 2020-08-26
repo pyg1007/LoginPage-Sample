@@ -7,4 +7,13 @@
     <string name="sign_up">Sign Up</string>
     <string name="login">Login</string>
     <string name="forget">If forget id/password Click here.</string>
+    <string name="next">Next</string>
+
+    <string name="TermsOfUse">Sample-Login TermsOfUse</string>
+    <string name="PersonalInformation">Collection and use of personal information</string>
+    <string name="LocationInformation">Location Information Terms of Use</string>
+
+    <string name="Agree">Agree</string>
+    <string name="Disagreement">Disagreement</string>
+    
 </resources>
