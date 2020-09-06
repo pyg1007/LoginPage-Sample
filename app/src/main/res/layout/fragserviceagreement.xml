@@ -15,23 +15,78 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
         <TextView
-            android:text="@string/app_name"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:id="@+id/serviceAgreementInformation"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="25dp"
+            android:gravity="center_vertical"
+            android:text="@string/TermsOfUse"
+            android:textStyle="bold"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintHeight_percent="0.05"
+            app:layout_constraintLeft_toLeftOf="@id/serviceAgreementContent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintWidth_percent="0.4" />
+
+        <ScrollView
+            android:id="@+id/serviceAgreementContent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintHeight_percent="0.12"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/serviceAgreementInformation"
+            app:layout_constraintWidth_percent="0.7">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_round" />
+
+        </ScrollView>
+
+        <RadioGroup
+            android:id="@+id/serviceAgreementRadioButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            app:layout_constraintHeight_percent="0.03"
+            app:layout_constraintRight_toRightOf="@id/serviceAgreementContent"
+            app:layout_constraintTop_toBottomOf="@id/serviceAgreementContent">
+
+            <RadioButton
+                android:id="@+id/serviceAgreementAgree"
+                android:text="@string/Agree"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/serviceAgreementDisagreement"
+                android:text="@string/Disagreement"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RadioGroup>
+
 
         <Button
             android:id="@+id/Next"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            android:text="@string/next"
-            android:background="@drawable/button_round"
-            android:layout_marginBottom="25dp"
-            android:layout_marginEnd="25dp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintWidth_percent="0.2"
-            android:onClick="@{serviceAgreement::nextPage}"/>
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:onClick="@{serviceAgreement::nextPage}"
+            android:text="@string/next"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintWidth_percent="0.2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

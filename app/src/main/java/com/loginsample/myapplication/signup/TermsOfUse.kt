@@ -13,13 +13,14 @@ import androidx.fragment.app.Fragment
 import com.loginsample.myapplication.R
 import com.loginsample.myapplication.SignUpPage
 import com.loginsample.myapplication.databinding.FragtermsofuseBinding
+import com.loginsample.myapplication.lifeCycleObserveFragment
 import com.loginsample.myapplication.viewmodel.SignUpViewModel
 
-class TermsOfUse: Fragment() {
+class TermsOfUse: Fragment(R.layout.fragtermsofuse) {
 
     private lateinit var termsOfUseView: View
     private lateinit var termsOfUseContext: Context
-    private lateinit var termsOfUseDataBinding: FragtermsofuseBinding
+    private val termsOfUseDataBinding by lifeCycleObserveFragment { FragtermsofuseBinding.bind(requireView()) }
     private var termsOfUseCheck = false
     private var personalInformationCheck = false
     private var locationInformationCheck = false
@@ -67,14 +68,6 @@ class TermsOfUse: Fragment() {
 
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        termsOfUseDataBinding = DataBindingUtil.inflate(inflater, R.layout.fragtermsofuse, container, false)
-        return termsOfUseDataBinding.root
-    }
 
     override fun onDetach() {
         super.onDetach()

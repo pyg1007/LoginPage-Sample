@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string name="app_name">Sample-Login</string>
+
+    <string name="id_hint">Write ID</string>
+    <string name="password_hint">Write Password</string>
+    <string name="auto_login">Auto Login</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="login">Login</string>
+    <string name="forget">If forget id/password Click here.</string>
+    <string name="next">Next</string>
+
+    <string name="TermsOfUse">Sample-Login TermsOfUse</string>
+    <string name="PersonalInformation">Collection and use of personal information</string>
+    <string name="LocationInformation">Location Information Terms of Use</string>
+
+    <string name="Agree">Agree</string>
+    <string name="Disagreement">Disagreement</string>
+
+    <string name="id">ID</string>
+    <string name="password">PassWord</string>
+    <string name="passwordCheck">PassWordCheck</string>
+    <string name="name">Name</string>
+    <string name="DateOfBirth">Date of birth</string>
+    <string name="year">Year(4characters)</string>
+    <string name="month">Month</string>
+    <string name="date">Date</string>
+
+</resources>

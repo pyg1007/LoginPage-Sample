@@ -38,13 +38,12 @@
             android:layout_marginTop="25dp"
             android:gravity="center_vertical"
             android:text="@string/TermsOfUse"
-            android:textSize="20sp"
             android:textStyle="bold"
+            app:autoSizeTextType="uniform"
             app:layout_constraintHeight_percent="0.05"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/TermsOfUseContent"
             app:layout_constraintTop_toBottomOf="@id/StepLayout"
-            app:layout_constraintWidth_percent="0.7" />
+            app:layout_constraintWidth_percent="0.4" />
 
         <ScrollView
             android:id="@+id/TermsOfUseContent"
@@ -97,13 +96,12 @@
             android:layout_marginTop="10dp"
             android:gravity="center_vertical"
             android:text="@string/TermsOfUse"
-            android:textSize="20sp"
             android:textStyle="bold"
+            app:autoSizeTextType="uniform"
             app:layout_constraintHeight_percent="0.05"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/PersonalInformationContent"
             app:layout_constraintTop_toBottomOf="@id/TermsOfUseRadioButton"
-            app:layout_constraintWidth_percent="0.7" />
+            app:layout_constraintWidth_percent="0.4" />
 
         <ScrollView
             android:id="@+id/PersonalInformationContent"
@@ -158,11 +156,11 @@
             android:text="@string/TermsOfUse"
             android:textSize="20sp"
             android:textStyle="bold"
+            app:autoSizeTextType="uniform"
             app:layout_constraintHeight_percent="0.05"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/LocationInformationContent"
             app:layout_constraintTop_toBottomOf="@id/PersonalInformationRadioButton"
-            app:layout_constraintWidth_percent="0.7" />
+            app:layout_constraintWidth_percent="0.4" />
 
         <ScrollView
             android:id="@+id/LocationInformationContent"

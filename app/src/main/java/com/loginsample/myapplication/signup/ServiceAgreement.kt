@@ -2,20 +2,26 @@ package com.loginsample.myapplication.signup
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.*
 import com.loginsample.myapplication.R
 import com.loginsample.myapplication.SignUpPage
 import com.loginsample.myapplication.databinding.FragserviceagreementBinding
+import com.loginsample.myapplication.lifeCycleObserveFragment
+import kotlin.properties.ReadWriteProperty
+import kotlin.reflect.KProperty
 
-class ServiceAgreement : Fragment(){
+class ServiceAgreement : Fragment(R.layout.fragserviceagreement){
 
-    private lateinit var serviceAgreementDataBinding: FragserviceagreementBinding
+    private val serviceAgreementDataBinding by lifeCycleObserveFragment{ FragserviceagreementBinding.bind(requireView()) }
     private lateinit var serviceAgreementContext: Context
     private lateinit var serviceAgreementView: View
+    private var serviceAgreementCheck = false
 
     companion object{
         fun newInstance(): ServiceAgreement{
@@ -35,15 +41,28 @@ class ServiceAgreement : Fragment(){
         serviceAgreementView = view
 
         serviceAgreementDataBinding.serviceAgreement = this@ServiceAgreement
+
+        serviceAgreementDataBinding.Next.isEnabled = false
+        serviceAgreementDataBinding.Next.setBackgroundResource(R.drawable.button_round_disable)
+
+        setServiceAgreement()
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        serviceAgreementDataBinding = DataBindingUtil.inflate(inflater, R.layout.fragserviceagreement, container, false)
-        return serviceAgreementDataBinding.root
+    private fun setServiceAgreement(){
+        serviceAgreementDataBinding.serviceAgreementRadioButton.setOnCheckedChangeListener { _, checkedId ->
+            serviceAgreementCheck = checkedId == R.id.serviceAgreementAgree
+            setNextButton()
+        }
+    }
+
+    private fun setNextButton(){
+        if (serviceAgreementCheck) {
+            serviceAgreementDataBinding.Next.isEnabled = true
+            serviceAgreementDataBinding.Next.setBackgroundResource(R.drawable.button_round)
+        }else{
+            serviceAgreementDataBinding.Next.isEnabled = false
+            serviceAgreementDataBinding.Next.setBackgroundResource(R.drawable.button_round_disable)
+        }
     }
 
     override fun onDetach() {
